@@ -1,0 +1,27 @@
+依赖：
+tpm-tss
+https://github.com/tpm2-software/tpm2-tss
+gmp: sudo apt install libgmp-dev
+flex: sudo apt install flex
+bison: sudo apt install bison
+pbc: https://crypto.stanford.edu/pbc/download.html  下载pbc-1.0.0.tar.gz
+$ ./configure
+$ make
+$ make install
+再添加路径
+echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/pbc.conf
+pbc安装参考：https://crypto.stanford.edu/pbc/manual/ch01.html
+
+Infineon SLB9670的TPM在树莓派的配置
+sudo raspi-config
+进入 Interfacing Options -> SPI -> Enable，然后 重启
+
+sudo nano /boot/config.txt
+在最后一行加上  dtoverlay=tpm-slb9670
+
+重启
+
+ls /dev/tpm*
+查看是否有设备存在
+
+

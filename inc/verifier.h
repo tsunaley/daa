@@ -1,0 +1,2 @@
+
+int verify(pairing_t pairing, element_t R, element_t S, element_t T, element_t W, element_t X, element_t Y, element_t P2, unsigned char *signatureS, unsigned char *hash_res, unsigned char *signatureR, char *k);
