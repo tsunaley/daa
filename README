@@ -25,3 +25,10 @@ ls /dev/tpm*
 查看是否有设备存在
 
 
+编译:
+g++ -std=c++17 -Iinc test.cpp common.cpp issuer.cpp prover.cpp verifier.cpp     -o test     -ltss2-esys -ltss2-mu -ltss2-rc -lgmp -lpbc -lcrypto
+
+运行要加sudo
+
+参考论文：https://dl.ifip.org/db/conf/cardis/cardis2010/ChenPS10.pdf
+代码从issuer颁发证书开始
